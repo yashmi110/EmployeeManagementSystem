@@ -1,0 +1,41 @@
+@DepartmentAPI.API_HostAddress = http://localhost:5299
+
+### Get all departments
+GET {{DepartmentAPI.API_HostAddress}}/api/departments
+Accept: application/json
+
+###
+
+### Get department by ID
+GET {{DepartmentAPI.API_HostAddress}}/api/departments/1
+Accept: application/json
+
+###
+
+### Create a new department
+POST {{DepartmentAPI.API_HostAddress}}/api/departments
+Content-Type: application/json
+
+{
+  "name": "Engineering",
+  "description": "Software Engineering Department"
+}
+
+###
+
+### Update department
+PUT {{DepartmentAPI.API_HostAddress}}/api/departments/1
+Content-Type: application/json
+
+{
+  "name": "Software Engineering",
+  "description": "Updated Software Engineering Department",
+  "isActive": true
+}
+
+###
+
+### Delete department
+DELETE {{DepartmentAPI.API_HostAddress}}/api/departments/1
+
+###

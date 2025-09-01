@@ -1,0 +1,77 @@
+@EmployeeAPI.API_HostAddress = http://localhost:5148
+
+### Get all employees
+GET {{EmployeeAPI.API_HostAddress}}/api/employees
+Accept: application/json
+
+###
+
+### Get employee by ID
+GET {{EmployeeAPI.API_HostAddress}}/api/employees/1
+Accept: application/json
+
+###
+
+### Get employees by department
+GET {{EmployeeAPI.API_HostAddress}}/api/employees/department/Engineering
+Accept: application/json
+
+###
+
+### Get all managers
+GET {{EmployeeAPI.API_HostAddress}}/api/employees/managers
+Accept: application/json
+
+###
+
+### Get average age
+GET {{EmployeeAPI.API_HostAddress}}/api/employees/stats/average-age
+Accept: application/json
+
+###
+
+### Get average salary
+GET {{EmployeeAPI.API_HostAddress}}/api/employees/stats/average-salary
+Accept: application/json
+
+###
+
+### Get employee count
+GET {{EmployeeAPI.API_HostAddress}}/api/employees/stats/count
+Accept: application/json
+
+###
+
+### Create a new employee
+POST {{EmployeeAPI.API_HostAddress}}/api/employees
+Content-Type: application/json
+
+{
+  "name": "john doe",
+  "age": 30,
+  "department": "Engineering",
+  "salary": 75000.00,
+  "managerId": null
+}
+
+###
+
+### Update employee
+PUT {{EmployeeAPI.API_HostAddress}}/api/employees/1
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "age": 31,
+  "department": "Software Engineering",
+  "salary": 80000.00,
+  "isActive": true,
+  "managerId": null
+}
+
+###
+
+### Delete employee
+DELETE {{EmployeeAPI.API_HostAddress}}/api/employees/1
+
+###

@@ -1,0 +1,858 @@
+{
+	"info": {
+		"_postman_id": "microservices-collection",
+		"name": "Microservices API Collection",
+		"description": "Complete collection for Department, Employee, and Project microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Department API",
+			"item": [
+				{
+					"name": "Get All Departments",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5299/api/departments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5299",
+							"path": [
+								"api",
+								"departments"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Department by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5299/api/departments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5299",
+							"path": [
+								"api",
+								"departments",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "Create Department",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Human Resources\",\n  \"description\": \"HR and Talent Management Department\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5299/api/departments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5299",
+							"path": [
+								"api",
+								"departments"
+							]
+						}
+					}
+				},
+				{
+					"name": "Update Department",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Software Engineering\",\n  \"description\": \"Updated Software Engineering Department\",\n  \"isActive\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5299/api/departments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5299",
+							"path": [
+								"api",
+								"departments",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete Department",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5299/api/departments/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5299",
+							"path": [
+								"api",
+								"departments",
+								"1"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Employee API",
+			"item": [
+				{
+					"name": "Get All Employees",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5148/api/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5148",
+							"path": [
+								"api",
+								"employees"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Employee by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5148/api/employees/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5148",
+							"path": [
+								"api",
+								"employees",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Employees by Department",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5148/api/employees/department/Engineering",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5148",
+							"path": [
+								"api",
+								"employees",
+								"department",
+								"Engineering"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get All Managers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5148/api/employees/managers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5148",
+							"path": [
+								"api",
+								"employees",
+								"managers"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Average Age",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5148/api/employees/stats/average-age",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5148",
+							"path": [
+								"api",
+								"employees",
+								"stats",
+								"average-age"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Average Salary",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5148/api/employees/stats/average-salary",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5148",
+							"path": [
+								"api",
+								"employees",
+								"stats",
+								"average-salary"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Employee Count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5148/api/employees/stats/count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5148",
+							"path": [
+								"api",
+								"employees",
+								"stats",
+								"count"
+							]
+						}
+					}
+				},
+				{
+					"name": "Create Employee",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"jane smith\",\n  \"age\": 28,\n  \"department\": \"Marketing\",\n  \"salary\": 65000.00,\n  \"managerId\": null\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5148/api/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5148",
+							"path": [
+								"api",
+								"employees"
+							]
+						}
+					}
+				},
+				{
+					"name": "Create Manager",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"mike johnson\",\n  \"age\": 35,\n  \"department\": \"Engineering\",\n  \"salary\": 95000.00,\n  \"managerId\": null\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5148/api/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5148",
+							"path": [
+								"api",
+								"employees"
+							]
+						}
+					}
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe Updated\",\n  \"age\": 31,\n  \"department\": \"Software Engineering\",\n  \"salary\": 80000.00,\n  \"isActive\": true,\n  \"managerId\": 2\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5148/api/employees/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5148",
+							"path": [
+								"api",
+								"employees",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5148/api/employees/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5148",
+							"path": [
+								"api",
+								"employees",
+								"1"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Project API",
+			"item": [
+				{
+					"name": "Get All Projects",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5147/api/projects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5147",
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Project by ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5147/api/projects/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5147",
+							"path": [
+								"api",
+								"projects",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Project Details with Employees",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5147/api/projects/1/details",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5147",
+							"path": [
+								"api",
+								"projects",
+								"1",
+								"details"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Projects by Department",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5147/api/projects/department/Engineering",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5147",
+							"path": [
+								"api",
+								"projects",
+								"department",
+								"Engineering"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Projects by Status",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5147/api/projects/status/Active",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5147",
+							"path": [
+								"api",
+								"projects",
+								"status",
+								"Active"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Project Employees",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5147/api/projects/1/employees",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5147",
+							"path": [
+								"api",
+								"projects",
+								"1",
+								"employees"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Total Budget",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5147/api/projects/stats/total-budget",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5147",
+							"path": [
+								"api",
+								"projects",
+								"stats",
+								"total-budget"
+							]
+						}
+					}
+				},
+				{
+					"name": "Get Active Project Count",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5147/api/projects/stats/active-count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5147",
+							"path": [
+								"api",
+								"projects",
+								"stats",
+								"active-count"
+							]
+						}
+					}
+				},
+				{
+					"name": "Create Project",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Mobile App Development\",\n  \"description\": \"Cross-platform mobile application for iOS and Android\",\n  \"startDate\": \"2024-02-01T00:00:00Z\",\n  \"endDate\": \"2024-08-31T00:00:00Z\",\n  \"budget\": 250000.00,\n  \"department\": \"Engineering\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5147/api/projects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5147",
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					}
+				},
+				{
+					"name": "Update Project",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Mobile App Development v2\",\n  \"description\": \"Updated mobile application with enhanced features\",\n  \"startDate\": \"2024-02-01T00:00:00Z\",\n  \"endDate\": \"2024-10-31T00:00:00Z\",\n  \"status\": \"Active\",\n  \"budget\": 300000.00,\n  \"department\": \"Engineering\",\n  \"isActive\": true\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5147/api/projects/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5147",
+							"path": [
+								"api",
+								"projects",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "Assign Employee to Project",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"employeeId\": 1,\n  \"role\": \"Lead Developer\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5147/api/projects/1/assign-employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5147",
+							"path": [
+								"api",
+								"projects",
+								"1",
+								"assign-employee"
+							]
+						}
+					}
+				},
+				{
+					"name": "Remove Employee from Project",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5147/api/projects/1/remove-employee/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5147",
+							"path": [
+								"api",
+								"projects",
+								"1",
+								"remove-employee",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "Delete Project",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5147/api/projects/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5147",
+							"path": [
+								"api",
+								"projects",
+								"1"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Integration Tests",
+			"item": [
+				{
+					"name": "Complete Workflow Test",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// This test demonstrates a complete workflow across all services",
+									"",
+									"// 1. Create a department",
+									"pm.test(\"Create Department\", function () {",
+									"    pm.response.to.have.status(201);",
+									"    const response = pm.response.json();",
+									"    pm.expect(response.name).to.eql(\"Test Department\");",
+									"    pm.environment.set(\"departmentId\", response.id);",
+									"});",
+									"",
+									"// 2. Create an employee",
+									"pm.test(\"Create Employee\", function () {",
+									"    pm.response.to.have.status(201);",
+									"    const response = pm.response.json();",
+									"    pm.expect(response.name).to.eql(\"Test Employee\");",
+									"    pm.environment.set(\"employeeId\", response.id);",
+									"});",
+									"",
+									"// 3. Create a project",
+									"pm.test(\"Create Project\", function () {",
+									"    pm.response.to.have.status(201);",
+									"    const response = pm.response.json();",
+									"    pm.expect(response.name).to.eql(\"Test Project\");",
+									"    pm.environment.set(\"projectId\", response.id);",
+									"});",
+									"",
+									"// 4. Assign employee to project",
+									"pm.test(\"Assign Employee to Project\", function () {",
+									"    pm.response.to.have.status(200);",
+									"    pm.expect(pm.response.text()).to.include(\"Employee assigned successfully\");",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Test Department\",\n  \"description\": \"Test Department for Integration\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5299/api/departments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5299",
+							"path": [
+								"api",
+								"departments"
+							]
+						}
+					}
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "departmentApiBaseUrl",
+			"value": "http://localhost:5299",
+			"type": "string"
+		},
+		{
+			"key": "employeeApiBaseUrl",
+			"value": "http://localhost:5148",
+			"type": "string"
+		},
+		{
+			"key": "projectApiBaseUrl",
+			"value": "http://localhost:5147",
+			"type": "string"
+		}
+	]
+} 

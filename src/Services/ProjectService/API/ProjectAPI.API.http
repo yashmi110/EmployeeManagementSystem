@@ -1,0 +1,102 @@
+@ProjectAPI.API_HostAddress = http://localhost:5147
+
+### Get all projects
+GET {{ProjectAPI.API_HostAddress}}/api/projects
+Accept: application/json
+
+###
+
+### Get project by ID
+GET {{ProjectAPI.API_HostAddress}}/api/projects/1
+Accept: application/json
+
+###
+
+### Get project details with employees
+GET {{ProjectAPI.API_HostAddress}}/api/projects/1/details
+Accept: application/json
+
+###
+
+### Get projects by department
+GET {{ProjectAPI.API_HostAddress}}/api/projects/department/Engineering
+Accept: application/json
+
+###
+
+### Get projects by status
+GET {{ProjectAPI.API_HostAddress}}/api/projects/status/Active
+Accept: application/json
+
+###
+
+### Get project employees
+GET {{ProjectAPI.API_HostAddress}}/api/projects/1/employees
+Accept: application/json
+
+###
+
+### Get total budget
+GET {{ProjectAPI.API_HostAddress}}/api/projects/stats/total-budget
+Accept: application/json
+
+###
+
+### Get active project count
+GET {{ProjectAPI.API_HostAddress}}/api/projects/stats/active-count
+Accept: application/json
+
+###
+
+### Create a new project
+POST {{ProjectAPI.API_HostAddress}}/api/projects
+Content-Type: application/json
+
+{
+  "name": "E-Commerce Platform",
+  "description": "Building a modern e-commerce platform with microservices architecture",
+  "startDate": "2024-01-01T00:00:00Z",
+  "endDate": "2024-12-31T00:00:00Z",
+  "budget": 500000.00,
+  "department": "Engineering"
+}
+
+###
+
+### Update project
+PUT {{ProjectAPI.API_HostAddress}}/api/projects/1
+Content-Type: application/json
+
+{
+  "name": "E-Commerce Platform v2",
+  "description": "Updated e-commerce platform with enhanced features",
+  "startDate": "2024-01-01T00:00:00Z",
+  "endDate": "2024-12-31T00:00:00Z",
+  "status": "Active",
+  "budget": 600000.00,
+  "department": "Engineering",
+  "isActive": true
+}
+
+###
+
+### Assign employee to project
+POST {{ProjectAPI.API_HostAddress}}/api/projects/1/assign-employee
+Content-Type: application/json
+
+{
+  "employeeId": 1,
+  "role": "Lead Developer"
+}
+
+###
+
+### Remove employee from project
+DELETE {{ProjectAPI.API_HostAddress}}/api/projects/1/remove-employee/1
+
+###
+
+### Delete project
+DELETE {{ProjectAPI.API_HostAddress}}/api/projects/1
+
+###
